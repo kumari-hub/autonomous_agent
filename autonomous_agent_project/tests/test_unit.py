@@ -13,17 +13,10 @@ class TestCheckTokenBalance(unittest.TestCase):
         cls.w3 = Web3(Web3.HTTPProvider(os.getenv("TENDERLY_RPC_URL")))
 
     @patch('main.web3') 
-    def test_check_token_balance(self, MockWeb3):
-        # mock_web3 = MagicMock()
-        # MockWeb3.return_value = mock_web3
-
-        # # Mock the contract and balanceOf call
-        # mock_contract = MagicMock()
-        # mock_web3.eth.contract.return_value = mock_contract
-        # mock_contract.functions.balanceOf.return_value.call.return_value = 1000000000000000000  # 1 Token in wei
+    def checking_token_balance(self, MockWeb3):
 
         async def async_test():
-            # Test the check_token_balance function with a mock address
+            # Test the checking_token_balance function with a mock address
             address = "0x3225ed03f7921DADB3bF3EA84945e1034609F390"
             balance = await check_token_balance(address)
             # Assert that balance is correctly fetched
